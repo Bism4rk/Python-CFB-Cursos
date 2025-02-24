@@ -1,4 +1,4 @@
-# Aula 24 - Herança
+# Aula 25 - Herança
 # Classe que herda outra classe
 
 import os
