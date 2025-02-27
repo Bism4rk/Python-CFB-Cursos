@@ -1,11 +1,5 @@
 # Aula 28 - Exercício Prático 1 P2
 
-'''
-NÃO
-FUNCIONA
-AINDA!!!!!!!
-'''
-
 import os 
 
 carros = []
