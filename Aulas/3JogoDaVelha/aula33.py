@@ -1,4 +1,4 @@
-# Aula 32 - Jogo da Velha P3
+# Aula 33 - Jogo da Velha P4
 
 '''
 AVISO: CHECAGEM DE VITÓRIA AINDA __NÃO__ ESTÁ IMPLEMENTADA!
@@ -24,8 +24,8 @@ def tela():
     global velha
     global jogadas
     os.system('cls')
-    print("Jogo da velha vers. 0.5 alpha")
-    print("Checagem de vitória ainda não implementada!")
+    print("Jogo da velha vers. 0.8 beta")
+    print("Checagem de vitória sendo testada!")
     print("    0   1   2")
     print("0:  " + velha[0][0] + " | " + velha[0][1] + " | " + velha[0][2])
     print("   -----------")
@@ -69,6 +69,7 @@ def cpuJoga():
 
 def verificarVitoria():
     global velha
+    global soma
     vitoria = "n"
     simbolos = ["X", "O"]
 
@@ -80,14 +81,14 @@ def verificarVitoria():
             soma = 0
             ic = 0
             while ic < 3:
-                if velha[il][ic] == s:
+                if (velha[il][ic] == s):
                     soma += 1
                 ic += 1
-            if soma == 3:
+            if (soma == 3):
                 vitoria = s
                 break
             il += 1
-        if vitoria != "n":
+        if (vitoria != "n"):
             break
 
         # Verificar colunas
@@ -96,10 +97,10 @@ def verificarVitoria():
             soma = 0
             il = 0
             while il < 3:
-                if velha[il][ic] == s:
+                if (velha[il][ic] == s):
                     soma += 1
                 il += 1
-            if soma == 3:
+            if (soma == 3):
                 vitoria = s
                 break
             ic +=1 
@@ -110,10 +111,10 @@ def verificarVitoria():
         soma = 0
         idiag = 0
         while idiag < 3:
-            if velha[idiag][idiag] == s:
+            if (velha[idiag][idiag] == s):
                 soma += 1
             idiag += 1
-        if soma == 3:
+        if (soma == 3):
             vitoria = s
             break
 
@@ -121,27 +122,51 @@ def verificarVitoria():
         soma = 0
         idiagl = 0
         idiagc = 2
-        while idiagc < 3:
-            if velha[idiagl][idiagc] == s:
+        while idiagc >= 0:
+            if (velha[idiagl][idiagc] == s):
                 soma += 1
             idiagl += 1
             idiagc -= 1
-        if soma == 3:
+        if (soma == 3):
             vitoria = s
             break
 
-        return vitoria
+    return vitoria
 
 
+def redefinir():
+    global jogadas
+    global quemJoga
+    global maxJogadas
+    global vit
+    global velha
 
+    jogadas = 0
+    quemJoga = 2  # 1 - CPU || 2 - Jogador
+    maxJogadas = 9
+    vit = "n"
+    velha = [
+        [" ", " ", " "],
+        [" ", " ", " "],
+        [" ", " ", " "]
+    ]
 
-
-while True:
-    tela()
-    jogadorJoga()
-    cpuJoga()
-    # checar vitória
-    # break
-    if jogadas == maxJogadas:
+while jogarNovamente == "s":
+    while True:
         tela()
-        break
+        jogadorJoga()
+        cpuJoga()
+        vit = verificarVitoria()
+        if vit != "n" or jogadas >= maxJogadas:
+            break
+
+    print(Fore.RED + "Fim de jogo!" + Fore.YELLOW)
+    if(vit == "X" or vit == "O"):
+        print("Resultado: jogador " + vit + " venceu!")
+    else:
+        print("Deu empate!")
+         
+    jogarNovamente = input(Fore.BLUE + "Deseja jogar novamente? [s = Sim // n = Não]" + Fore.RESET)
+    redefinir()
+
+
