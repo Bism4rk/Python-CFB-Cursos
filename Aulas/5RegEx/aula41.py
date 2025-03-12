@@ -1,20 +1,22 @@
-# Aula 41 - Expressões Regulares P3 (split)
+# Aula 41 - Expressões Regulares P2 (search)
 
-import re 
+import re
 import os
+
 os.system("cls")
 
-texto = "Curso de Python do CFB Cursos, canal do Youtube"  
+# Search - retorna um objeto Match (a primeira ocorrência encontrada) se encontrar um padrão em uma string
 
-res = re.split(" ", texto)
+texto = "Curso de Python do CFB Cursos, canal do Youtube"
+res = re.search("canal", texto)
 print(res)
-print(res[2])
 
-print('----------------')
-
-# for t in res:
-#     print(t)
-
-res2 = re.split(", ", texto)
-print(res2)
-print(res2[1])
+if res == None:
+    print("Não encontrado!")
+else:
+    pi = res.start()
+    pf = res.end()
+    tam = pf - pi
+    print("Posição inicial..: " + str(pi))
+    print("Posição final....: " + str(pf))
+    print("Tamanho..........: " + str(tam))

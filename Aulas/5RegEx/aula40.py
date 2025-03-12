@@ -1,22 +1,32 @@
-# Aula 40 - Expressões Regulares P2 (search)
+# Aula 40 - Expressões Regulares P1 (findall)
 
 import re
 import os
 
 os.system("cls")
 
-# Search - retorna um objeto Match (a primeira ocorrência encontrada) se encontrar um padrão em uma string
+# findall - retorna uma lista contendo todas as ocorrências de um padrão em uma string
 
 texto = "Curso de Python do CFB Cursos, canal do Youtube"
-res = re.search("canal", texto)
-print(res)
+pesq = input("Pesquisar: ")
+# res = re.findall("so", texto)
+# print(res)
 
-if res == None:
-    print("Não encontrado!")
+res = re.findall(pesq, texto)
+# print(res)
+
+qtde = len(res)
+
+for t in res:
+    print(t)
+
+print("\n")
+
+if len(res) == 0:
+    print(pesq + " não foi encontrado!")
+elif len(res) == 1:
+    print(pesq + " foi encontrado 1 vez!")
 else:
-    pi = res.start()
-    pf = res.end()
-    tam = pf - pi
-    print("Posição inicial..: " + str(pi))
-    print("Posição final....: " + str(pf))
-    print("Tamanho..........: " + str(tam))
+    print(pesq + " foi encontrado " + str(len(res)) + " vezes!")
+
+
