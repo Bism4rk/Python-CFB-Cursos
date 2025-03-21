@@ -1,4 +1,4 @@
-# Aula 54 - Criando uma agenda com um banco SQLite P2
+# Aula 55 - Criando uma agenda com um banco SQLite P3
 
 import os
 import sqlite3
@@ -30,11 +30,12 @@ def consultar(conexao, sql):
     c = conexao.cursor()
     c.execute(sql)
     res = c.fetchall()
+    return res
     # conexao.close()
 
 def MenuPrincipal():
     os.system('cls')
-    print("Agenda PythonTerminal CFB Cursos beta v0.4 - inserir novos registros funciona!")
+    print("Agenda PythonTerminal CFB Cursos beta v0.8 - deletar, atualizar adicionados!")
     print("1 - Inserir novo registro")
     print("2 - Deletar registro")
     print("3 - Atualizar registro")
@@ -55,10 +56,29 @@ def MenuInserir():
     query(vcon, vsql)
 
 def MenuDeletar():
-    print("Deletar registro")
+    os.system('cls')
+    vid = input("Digite a ID do registro a ser deletado..: ")
+    vsql = """DELETE FROM tb_contatos WHERE N_IDCONTATO = {}""".format(vid)
+    query(vcon, vsql)
 
 def MenuAtualizar():
-    print("Atualizar registro")
+    os.system('cls')
+    vid = input("Digite a ID do registro a ser consultado..: ")
+    r = consultar(vcon, "SELECT * FROM tb_contatos WHERE N_IDCONTATO = {}".format(vid))
+    rnome = r[0][1]
+    rtelefone = r[0][2]
+    remail = r[0][3]
+    vnome = input("Digite o nome.....: ")
+    vtelefone = input("Digite o telefone..: ")
+    vemail = input("Digite o email...: ")
+    if len(vnome) == 0:
+        vnome = rnome
+    if len(vtelefone) == 0:
+        vtelefone = rtelefone
+    if len(vemail) == 0:
+        vemail == remail
+    vsql = """UPDATE tb_contatos SET T_NOMECONTATO = '{}', T_TELEFONECONTATO = '{}', T_EMAILCONTATO = '{}' WHERE N_IDCONTATO = {}""".format(vnome, vtelefone, vemail, vid)
+    query(vcon, vsql)
 
 def MenuConsultarID():
     print("Consultar registro por ID")
