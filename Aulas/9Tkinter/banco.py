@@ -5,6 +5,7 @@ import os
 pastaApp = os.path.dirname(__file__)
 caminho = "C:\\Users\\reich\\Downloads\\Python-CFB-Cursos\\Aulas\\Banco\\agenda.db"
 
+
 def ConexaoBanco():
     con = None
     try:

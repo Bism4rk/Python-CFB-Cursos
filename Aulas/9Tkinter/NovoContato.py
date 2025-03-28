@@ -4,9 +4,6 @@ import banco
 import os
 from tkinter import *
 
-c = os.path.dirname(__file__)
-nomeArquivo = c + "\\nomes.txt"
-
 def gravarDados():
     if tb_nome.get() != "":
         vnome = tb_nome.get()
