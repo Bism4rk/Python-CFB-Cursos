@@ -18,7 +18,7 @@ def gravarDados():
 
 
 app = Tk()
-app.title("CFB Cursos")
+app.title("CFB Cursos - Tkinter button")
 app.geometry("500x350")
 app.configure(background="#dde")
 

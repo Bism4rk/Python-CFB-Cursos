@@ -4,7 +4,7 @@ import os
 from tkinter import *
 
 app = Tk() # Cria a janela
-app.title("CFB Cursos")
+app.title("CFB Cursos - Introdução ao Tkinter")
 app.geometry("500x300") # Configura o tamanho da janela
 app.configure(background="#008") # Muda a cor de fundo
 

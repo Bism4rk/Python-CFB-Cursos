@@ -26,7 +26,7 @@ def gravarDados():
 
 
 app = Tk()
-app.title("CFB Cursos")
+app.title("CFB Cursos - Novo Contato")
 app.geometry("500x350")
 app.configure(background="#dde")
 

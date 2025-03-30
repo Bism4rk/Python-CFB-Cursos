@@ -29,7 +29,7 @@ def gravarDados():
 
 
 app = Tk()
-app.title("CFB Cursos")
+app.title("CFB Cursos - Integração tkinter com SQL ")
 app.geometry("500x350")
 app.configure(background="#dde")
 

@@ -14,7 +14,7 @@ def NovoContato():
     exec(open(c + "\\NovoContato.py").read(), {'x':10})
 
 app = Tk()
-app.title("CFB Cursos")
+app.title("CFB Cursos - Agenda Tkinter")
 app.geometry("500x350")
 app.configure(background="#dde")
 

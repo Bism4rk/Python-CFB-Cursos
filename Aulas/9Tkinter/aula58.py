@@ -1,10 +1,10 @@
-# Aula 58 - Tkinter: entry e test
+# Aula 58 - Tkinter: entry e text
 
 import os
 from tkinter import *
 
 app =  Tk()
-app.title("CFB Cursos")
+app.title("CFB Cursos - Tkinter entry e text")
 app.geometry("500x300")
 app.configure(background="#dde")
 
