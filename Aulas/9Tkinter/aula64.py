@@ -1,5 +1,4 @@
-# Aula 63 - Tkinter Radio Button
-
+# Aula 65 - Tkinter option menu
 from tkinter import *
 import os
 
