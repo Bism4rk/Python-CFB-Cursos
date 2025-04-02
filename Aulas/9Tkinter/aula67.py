@@ -1,4 +1,4 @@
-# Aula 66 - Tkinter frame
+# Aula 67 - Tkinter label
 
 from tkinter import *
 from tkinter import messagebox
@@ -44,11 +44,8 @@ fr_quadro2 = Frame(app, borderwidth=1, relief="solid", bg="#008")
 # Tipos de relief - solid, sunken, raised, flat, groove
 fr_quadro2.place(x=10, y=140, width=300, height=120)
 
-lb_tipo2 = Label(fr_quadro2, text="Quadro 2!", fg="#fff", bg="#008")
-lb_tipo2.place(x=10, y=10)
-
-btn_msg = Button(fr_quadro2, text="Mostrar mensagem", command=mostrarMsg)
-btn_msg.place(x=13, y=40, width=130)
+lb_canal = Label(fr_quadro2, text="CFB Cursos", background="#008", foreground="#fff", font=("Arial", 20))
+lb_canal.pack(side=LEFT, fill=X, expand=TRUE)
 
 os.system('cls')
 app.mainloop()
