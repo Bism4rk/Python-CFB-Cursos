@@ -19,7 +19,7 @@ ask:
 '''
 
 app = Tk()
-app.title("CFB Cursos - Tkinter frame")
+app.title("CFB Cursos - Tkinter label")
 app.geometry("500x300")
 vnum_cxtexto = StringVar()
 vmsg = "Curso de Python / Tkinter"
