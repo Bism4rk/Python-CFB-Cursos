@@ -1,4 +1,4 @@
-# Aula 5 - Tkinter SpinBox
+# Aula 75 - Tkinter SpinBox
 
 from tkinter import *
 from tkinter import ttk
